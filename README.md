@@ -66,11 +66,11 @@ This app has been crafted with a focus on accessibility, utilizing the Accessibi
 * Semantic HTML: Employs clean, semantic HTML when ever possible for better accessibility.
 
 <p align="center">
-<img src="./src/assets/access1.png" alt="Accessibility test 1" width="">
+<img src="./src/assets/access1.PNG" alt="Accessibility test 1" width="">
 </p>
 
 <p align="center">
-<img src="./src/assets/access2.png" alt="Accessibility test 2" width="400">
+<img src="./src/assets/access2.PNG" alt="Accessibility test 2" width="400">
 </p>
 
 ### Unit Testing
@@ -78,7 +78,7 @@ This app has been crafted with a focus on accessibility, utilizing the Accessibi
 This project uses Jasmine and karma for unit testing
 
 <p align="center">
-<img src="./src/assets/tests.png" alt="Unit tests" width="800">
+<img src="./src/assets/tests.PNG" alt="Unit tests" width="800">
 </p>
 
 To run and execute all the unit tests defined in the project after setting the app in development mode, open a new terminal and write the following:
@@ -90,7 +90,7 @@ ng test
 ### Lighthouse report
 
 <p align="center">
-<img src="./src/assets/light-house.png" alt="Lighthouse tests" width="800">
+<img src="./src/assets/light-house.PNG" alt="Lighthouse tests" width="800">
 </p>
 
 

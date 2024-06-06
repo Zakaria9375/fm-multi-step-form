@@ -1,4 +1,4 @@
-import {Component, computed, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {StepperHandlingService} from "../common/services/stepper/stepper-handling.service";
 import {NgClass} from "@angular/common";
 import {Subscription} from "rxjs";
