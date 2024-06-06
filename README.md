@@ -70,7 +70,7 @@ This app has been crafted with a focus on accessibility, utilizing the Accessibi
 </p>
 
 <p align="center">
-<img src="./src/assets/access2.PNG" alt="Accessibility test 2" width="400">
+<img src="./src/assets/access2.PNG" alt="Accessibility test 2" width="350">
 </p>
 
 ### Unit Testing
@@ -90,7 +90,7 @@ ng test
 ### Lighthouse report
 
 <p align="center">
-<img src="./src/assets/light-house.PNG" alt="Lighthouse tests" width="800">
+<img src="./src/assets/light-house.PNG" alt="Lighthouse tests" width="450">
 </p>
 
 
