@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {HeaderComponent} from "./header/header.component";
+import {StepperComponent} from "./stepper/stepper.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [ HeaderComponent, StepperComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'multi-step-form';
+  submitted: boolean = false;
+  toggleMsg(e: string){
+    this.submitted = true
+    console.log(e)
+  }
 }

@@ -1,0 +1,40 @@
+<section [formGroup]="formChecking" aria-label="Step 4: Summary">
+  <h1>Finishing up</h1>
+  <p class="step-header">Double-check everything looks OK before confirming.</p>
+  <div class="bg-light-grey rounded-lg p-4 tablet:px-6 tablet:pb-6">
+    <div class="relative" [ngClass]="{'pb-3 border-b border-b-bc tablet:pb-6':
+    selectedAddOns.length > 0}">
+      <h2
+        class="text-denim font-medium text-[0.875rem] leading-4 tablet:text-[1rem] tablet:leading-[1.125rem] capitalize"
+      >
+        {{ selectedPlan?.title }} <span class="lowercase">({{ planType() }})</span>
+      </h2>
+      <button (click)="goChange()" class="my-base underline text-grey mt-2">
+        Change
+      </button>
+      <span class="text-denim absolute right-0 top-[12px] tablet:top-[15px]"
+        >{{
+          isYearly
+            ? selectedPlan?.priceYearly
+            : (selectedPlan?.priceMonthly
+              | currency: "USD" : "symbol" : "1.0-0")
+        }}/{{ perType() }}</span
+      >
+    </div>
+    @for (addOn of selectedAddOns; track $index) {
+      <h3 class="my-base mt-3 tablet:mt-4 flex justify-between ">
+        <span class="text-grey capitalize">{{ addOn.title }}</span>
+        <span class="text-denim">{{ getAddOnsPrice(addOn) }}</span>
+      </h3>
+    }
+  </div>
+
+  <h4 class="my-base px-4 tablet:px-6 mt-6 flex justify-between">
+    <span class="text-grey">Total (per {{ isYearly ? "year" : "month" }})</span>
+    <span
+      class="text-[1rem] leading-5 tablet:text-[1.25rem] text-my-purple font-bold"
+    >
+      {{ totalPrice | currency: "USD" : "symbol" : "1.0-0" }}/{{ perType() }}
+    </span>
+  </h4>
+</section>

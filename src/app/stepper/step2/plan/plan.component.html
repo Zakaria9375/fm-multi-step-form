@@ -1,0 +1,50 @@
+<div
+  role="listbox"
+  class="my-8 flex mobile:flex-col tablet:items-center justify-center gap-[18px] mobile:gap-3 mobile:mb-0 mobile:mt-[22px]"
+  aria-required="true"
+  aria-label="Select a plan"
+>
+  @for (plan of plans; track plan.id) {
+    <div
+      (click)="onPlanSelect(plan)"
+      tabindex="0"
+      role="option"
+      class="border border-bc rounded-lg p-4 mobile:py-[14px] flex-1 mobile:flex mobile:w-full mobile:gap-[14px] cursor-pointer"
+      [ngClass]="{ 'bg-light-grey selected-plan': selectedPlan === plan }"
+      [attr.aria-selected]="selectedPlan === plan"
+    >
+      <img
+        [src]="'assets/images/' + plan.icon"
+        alt=""
+        class="self-center size-10"
+      />
+      <div class="mb-[3px] tablet:mt-10 space-y-[7px]">
+        <h2
+          role="presentation"
+          class="leading-[1.125rem] font-medium text-denim capitalize"
+        >
+          {{ plan.title }}
+        </h2>
+
+        @if (!isYearly) {
+          <h3 role="presentation" class="text-grey text-[0.875rem] leading-5" [@fade-up]>
+            {{ plan.priceMonthly | currency: "USD" : "symbol" : "1.0-0" }}/mo
+          </h3>
+        } @else {
+          <div [@fade-down]>
+            <h3 role="presentation" class="text-grey text-[0.875rem] leading-5">
+              {{ plan.priceYearly | currency: "USD" : "symbol" : "1.0-0" }}/yr
+            </h3>
+            <h4
+              role="presentation"
+              class="text-denim text-[0.75rem] leading-[0.875rem]"
+            >
+              2 months free
+            </h4>
+          </div>
+        }
+      </div>
+    </div>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/option_role -->
+  }
+</div>

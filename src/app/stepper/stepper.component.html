@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()"
+      class="mobile:min-h-form flex flex-col justify-between tablet:min-h-[568px]"
+      aria-label="Multi-step form">
+  @if (currentStep; as idx) {
+    <div
+      class="mobile:mx-4 mobile:rounded-lg mobile:shadow-ninja bg-white mobile:px-6 mobile:py-8 tablet:my-10 mobile:mb-6">
+        <ng-container [ngSwitch]="currentStep">
+          <app-step1 *ngSwitchCase="1" [step1]="personalInfo" [@fade]/>
+          <app-step2 *ngSwitchCase="2" [step2]="planSelection" [@fade]/>
+          <app-step3 *ngSwitchCase="3" [step3]="addOns" [isYearly]="isYearly" [@fade]/>
+          <app-step4 *ngSwitchCase="4" [formChecking]="form" [@fade]/>
+      </ng-container>
+
+    </div>
+
+
+    <div
+      class="self-end flex items-center justify-between p-4 tablet:px-0 text-[0.875rem] leading-4 tablet:text-[1rem] tablet:leading-[1.125rem] font-medium bg-white w-full">
+      @if(idx !== 1){
+        <button type="button" (click)="prevStep()" class="text-grey hover:text-denim ">Go
+          Back</button>
+      }
+      @if(idx < 4) {
+        <button type="button" (click)="nextStep()"
+                class="py-3 px-4 text-white bg-denim hover:bg-[#164A8A] tablet:py-[15px] tablet:px-6 rounded-lg ml-auto">Next
+          Step</button>
+      } @else {
+        <button type="submit"
+                class="py-3 px-4 text-white bg-my-purple hover:bg-[#928CFF] tablet:py-[15px] tablet:px-6 rounded-lg ml-auto">Submit</button>
+      }
+    </div>
+  }
+</form>

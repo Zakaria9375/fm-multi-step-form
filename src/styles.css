@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/fonts/Ubuntu-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *:focus {
+    @apply outline-cyan-400;
+  }
+  body {
+    @apply font-sans text-[1rem] leading-[150%]  bg-mbg;
+  }
+  input[type=text] {
+    @apply w-full rounded-lg border border-bc py-3 px-4;
+  }
+
+  h1 {
+    @apply text-[1.5rem] tablet:text-[2rem] leading-[1.15625] font-bold text-denim;
+  }
+  p {
+    @apply leading-[1.5625] text-grey;
+  }
+  label {
+    @apply block text-denim text-[0.875rem] leading-[1rem];
+  }
+}
+
+@layer components {
+  .nav-mobile {
+    @apply right-0 min-h-[127px] bg-header-mobile top-0 left-0 bg-no-repeat object-fill bg-cover bg-center;
+  }
+  .nav-tablet {
+    @apply left-4 bg-header-tablet top-4 bottom-4 rounded-[10px] max-w-[274px] bg-no-repeat object-fill bg-cover bg-center;
+  }
+  .step-header{
+    @apply mt-3 tablet:mt-2 mb-9 mobile:mb-[22px];
+  }
+  .c-description {
+    @apply text-[0.75rem] tablet:text-[1rem] leading-[1.25rem]
+  }
+  .c-container {
+    @apply border border-bc rounded-lg py-2 px-4 flex items-center has-[:checked]:bg-light-grey has-[:checked]:border-my-purple focus:border-my-purple;
+  }
+  .my-base {
+    @apply text-[0.875rem] leading-5
+  }
+  .switch-btn {
+    @apply w-10 h-5 rounded-[10px] bg-denim cursor-pointer relative duration-200
+  }
+  .switch-btn:after {
+    @apply duration-300 absolute content-[''] bg-white size-3 rounded-full m-1 left-0
+  }
+  #switcher:checked + .switch-btn::after {
+    @apply translate-x-5
+  }
+}
+
+
+/*Overrides*/
+.input-error {
+  border-color: #EE374A !important;
+}
+.selected-step {
+  background: #BEE2FD !important;
+  color: #022959 !important;
+  border-color: #BEE2FD !important;
+}
+.plan-type {
+  color: #022959 !important;
+}
+
+.selected-plan {
+  border-color: #483EFF !important;
+}
+

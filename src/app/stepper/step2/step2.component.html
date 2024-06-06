@@ -1,0 +1,39 @@
+<section [formGroup]="step2" aria-label="Step 2">
+  <h1>Select your plan</h1>
+  <p class="step-header">You have the option of monthly or yearly billing.</p>
+  <app-plan
+    formControlName="plan"
+    [isYearly]="isYearly.value"
+    [attr.aria-describedby]="getAriaDescribedBy('plan')"
+
+  />
+  <div
+    class="my-[22px] bg-light-grey rounded-lg w-full flex items-center justify-center gap-6 p-[14px]"
+  >
+    <h2
+      class="font-bold text-grey text-[0.875rem] leading-[1rem]"
+      [ngClass]="{ 'plan-type': !isYearly.value }"
+    >
+      Monthly
+    </h2>
+    <div id="toggle-btn">
+      <input
+        type="checkbox"
+        id="switcher"
+        aria-label="Choose plan type yearly"
+        formControlName="isYearly"
+        aria-live="polite"
+        class="hidden"
+      />
+      <label for="switcher" class="switch-btn" aria-hidden="true"></label>
+    </div>
+    <h2
+      class="font-bold text-grey text-[0.875rem] leading-[1rem]"
+      [ngClass]="{ 'plan-type': isYearly.value }"
+    >
+      Yearly
+    </h2>
+  </div>
+
+  <app-form-error [control]="plan" errId="plan" />
+</section>

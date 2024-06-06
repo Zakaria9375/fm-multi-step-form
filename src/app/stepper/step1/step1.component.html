@@ -1,0 +1,55 @@
+<section [formGroup]="step1" aria-label="Step 1: Personal Info">
+  <h1>Personal info</h1>
+  <p class="step-header">Please provide your name, email address, and
+    phone
+    number.</p>
+  <div class="mt-6">
+    <div class="flex items-end justify-between mb-2">
+      <label for="name">Name</label>
+      <app-form-error [control]="name" errId="name"/>
+    </div>
+
+    <input
+      type="text"
+      formControlName="name"
+      id="name"
+      placeholder="e.g. Stephen king"
+      autocomplete="name"
+      aria-required="true"
+      [attr.aria-describedby]="getAriaDescribedBy('name')"
+      [class.input-error]="name?.invalid && name?.touched"
+    />
+  </div>
+  <div class="mt-6">
+    <div class="flex items-end justify-between mb-2">
+      <label for="email">Email Address</label>
+      <app-form-error [control]="email" errId="email"/>
+    </div>
+
+    <input
+      type="text"
+      formControlName="email"
+      id="email"
+      placeholder="e.g. stephenking@lorem.com"
+      autocomplete="email"
+      [attr.aria-describedby]="getAriaDescribedBy('email')"
+      [class.input-error]="email?.invalid && email?.touched"
+    />
+  </div>
+  <div class="mt-6">
+    <div class="flex items-end justify-between mb-2">
+      <label for="phone">Phone Number</label>
+      <app-form-error [control]="phone" errId="phone"/>
+    </div>
+
+    <input
+      type="text"
+      formControlName="phone"
+      id="phone"
+      placeholder="e.g. +1 234 567 890"
+      autocomplete="name"
+      [attr.aria-describedby]="getAriaDescribedBy('phone')"
+      [class.input-error]="phone?.invalid && phone?.touched"
+    />
+  </div>
+</section>

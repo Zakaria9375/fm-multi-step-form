@@ -1,0 +1,12 @@
+@if (control?.touched && control?.errors) {
+  @for (err of errorMessages; track $index) {
+    <p
+      [@slide-in]
+      aria-live="polite"
+      [id]="err.id"
+      class="text-red-err font-bold text-[0.875rem] leading-[1rem]"
+    >
+      {{ err.message }}
+    </p>
+  }
+}

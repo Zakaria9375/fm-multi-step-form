@@ -1,0 +1,26 @@
+<section aria-label="Step 3" [formGroup]="step3">
+  <h1>Pick add-ons</h1>
+  <p class="step-header">Add-ons help enhance your gaming experience.</p>
+  <div class="space-y-3 tablet:space-y-4">
+    @for(addOn of addOns; track $index) {
+      <div class="c-container">
+        <input
+          type="checkbox"
+          [id]="addOn.id"
+          aria-live="polite"
+          [attr.aria-describedby]="addOn.id + '-d'"
+          [formControlName]="addOn.name"
+          class="size-5 cursor-pointer"
+        />
+        <div class="ml-4 mr-auto tablet:ml-6">
+          <label [for]="addOn.id"
+                 class="font-bold tablet:text-[1rem] leading-[1.125rem] capitalize">{{addOn.title}}</label>
+          <p [id]="addOn.id + '-d'"
+             class="mt-0.5 c-description tablet:mt-2">{{addOn.description}}</p>
+        </div>
+        <span
+          class="block text-my-purple c-description">{{getPrice(addOn)}}</span>
+      </div>
+    }
+  </div>
+</section>

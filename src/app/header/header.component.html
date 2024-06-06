@@ -1,0 +1,22 @@
+<div
+  class="absolute mobile:nav-mobile tablet:nav-tablet mobile:flex justify-center w-full">
+  <nav
+    class="flex tablet:flex-col items-start tablet:ml-8 mt-10 gap-4 tablet:gap-8 relative z-20">
+    @for(step of steps; track step.id){
+      <button
+        class="flex text-white"
+              (click)="goToStep(step.id)">
+        <span
+          class="flex items-center justify-center size-[34px] border-2 border-white bg-transparent tracking-[1px] text-[0.875rem] leading-[1rem] font-bold rounded-full" [ngClass]="{'selected-step': isSelected(step.id)}">{{step.id}}</span>
+        <div class="mobile:hidden space-y-1 uppercase ml-4 text-left">
+          <span
+            class="block font-normal text-light-blue text-[0.75rem] leading-[0.875rem]">{{
+              step.nr
+            }}</span>
+          <span
+            class="block font-bold tracking-[1px] text-[0.875rem] leading-[1rem]">{{ step.title }}</span>
+        </div>
+      </button>
+    }
+  </nav>
+</div>
