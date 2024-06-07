@@ -93,6 +93,15 @@ ng test
 <img src="./src/assets/light-house.PNG" alt="Lighthouse tests" width="450">
 </p>
 
+## Retrospectives
+
+> What went well ?
+
+I am proud of accessbility, styling, clean markup
+
+> What could be improved ?
+
+The weird way of fetching font at the initial load of the page. Should be seprated from the main style sheet and preloaded in index.html 
 
 ## About the Author
 
