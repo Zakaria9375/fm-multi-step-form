@@ -39,7 +39,7 @@ To run this app in development mode open the terminal and write the following:
 
 ```shell  
 git clone https://github.com/Zakaria9375/fm-multi-step-form.git 
-cd fm-contact-form  
+cd fm-multi-step-form  
 npm install 
  
 # you need to install angular cli to run this app in development mode
