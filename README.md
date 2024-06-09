@@ -101,8 +101,7 @@ I am proud of accessbility, styling, clean markup
 
 > What could be improved ?
 
-The weird way of fetching font at the initial load of the page. Should be seprated from the main style sheet and preloaded in index.html 
-Tailwind merge package would be useful in case of overrides the defaults
+The weird way of fetching font at the initial load of the page.
 
 ## About the Author
 
