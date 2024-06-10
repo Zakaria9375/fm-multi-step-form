@@ -76,6 +76,8 @@ This app has been crafted with a focus on accessibility, utilizing the Accessibi
 </p>
 </details>
 
+---
+
 ### Unit Testing
 
 This project uses Jasmine and karma for unit testing
@@ -93,11 +95,16 @@ To run and execute all the unit tests defined in the project after setting the a
 ng test
 ```
 
+---
+
 ### Lighthouse report
 
+<details>
+  <summary><b>Accessibility Tests Screenshots</b></summary>
 <p align="center">
 <img src="./src/assets/light-house.PNG" alt="Lighthouse tests" width="450">
 </p>
+</details>
 
 ## Retrospectives
 
