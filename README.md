@@ -65,6 +65,8 @@ This app has been crafted with a focus on accessibility, utilizing the Accessibi
 * Aria rules compliance: Proper implementation of ARIA (Accessible Rich Internet Applications) rules.
 * Semantic HTML: Employs clean, semantic HTML when ever possible for better accessibility.
 
+<details>
+  <summary><b>Accessibility Tests Screenshots</b></summary>
 <p align="center">
 <img src="./src/assets/access1.PNG" alt="Accessibility test 1" width="">
 </p>
@@ -72,14 +74,18 @@ This app has been crafted with a focus on accessibility, utilizing the Accessibi
 <p align="center">
 <img src="./src/assets/access2.PNG" alt="Accessibility test 2" width="350">
 </p>
+</details>
 
 ### Unit Testing
 
 This project uses Jasmine and karma for unit testing
 
+<details>
+  <summary><b>Unit Tests Screenshots</b></summary>
 <p align="center">
-<img src="./src/assets/tests.PNG" alt="Unit tests" width="800">
+<img src="./src/assets/tests.PNG" alt="Unit tests" width="600">
 </p>
+</details>
 
 To run and execute all the unit tests defined in the project after setting the app in development mode, open a new terminal and write the following:
 
